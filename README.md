@@ -1,24 +1,31 @@
-# EV Adoption & Renewable Energy Analysis
+# EV Adoption and Renewable Energy Analysis
 
-Data analysis project exploring the relationship between electric vehicle adoption and renewable energy share across countries (2010–2023).
+A notebook analysis of electric vehicle adoption and renewable electricity across countries.
 
-# Results
+## Results
 
-- Pearson correlation of r = 0.78 (p < 0.05) between EV stock share and renewable energy share — suggesting countries investing in renewables are also accelerating   EV adoption
-- Analysed 100,000+ records across 2010–2023 from two real-world datasets
+The merged IEA Global EV Data 2024 and Our World in Data energy data contain 456 country-year observations. EV stock share and renewable electricity share are positively correlated: Pearson r = 0.44 overall, rising from 0.39 in 2013 to 0.72 in 2022. This is an association, not a causal result.
 
-# Dataset
+The notebook includes country-level visualisations and a yearly correlation analysis.
 
-- IEA Global EV Data 2024
-- Our World in Data (OWID) energy dataset
-- Resolved country name mismatches and applied per-country linear interpolation to fill short time-series gaps
+## Run
 
-# Tech Stack
- 
-  Python · Pandas · NumPy · Plotly · Seaborn · Matplotlib · SciPy · Jupyter Notebook
+The notebook expects these CSV files in the repository root:
 
-# Key Features
+- `Global EV Data 2024 (1).csv`
+- `owid-energy-data.csv`
 
-- Animated Plotly scatter visualisation with country-level trajectories and year-slider controls
-- Quadrant shading to identify high EV + high renewables leaders vs laggards
-- Yearly Pearson correlation trend analysis showing strengthening relationship over time
+Download the matching datasets from IEA Global EV Data 2024 and Our World in Data. The data files are not included here.
+
+```powershell
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+jupyter notebook ev_renewable_energy_analysis.ipynb.ipynb
+```
+
+Run the notebook cells in order after adding both CSV files.
+
+## Topics
+
+electric-vehicles, renewable-energy, data-analysis, pandas, jupyter-notebook
